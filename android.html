@@ -8,8 +8,11 @@
 <meta name="theme-color" content="#55b02e">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.webmanifest">
-<script>(function(){var q=location.search;var app=/[?&]app=1/.test(q)||window.navigator.standalone===true||(window.matchMedia&&matchMedia('(display-mode: standalone)').matches);
-if(app){location.replace('https://script.google.com/macros/s/AKfycbwxwjXR7xmLoyvnUVWCjol9dUThRRf-ylkoE6Pvkv_45flQHlCaUCpOFRNADeJ2tZ29/exec');return;}
+<script>(function(){var q=location.search,h=location.hash,K='gc_k',sv=/[#&]save=([^&]+)/.exec(h),lo=/[#&]logout=1/.test(h);
+try{if(sv)localStorage.setItem(K,decodeURIComponent(sv[1]));if(lo)localStorage.removeItem(K);}catch(e){}
+var app=!!sv||lo||/[?&]app=1/.test(q)||window.navigator.standalone===true||(window.matchMedia&&matchMedia('(display-mode: standalone)').matches);
+if(app){var k=null;try{k=localStorage.getItem(K);}catch(e){}
+location.replace('https://script.google.com/macros/s/AKfycbwxwjXR7xmLoyvnUVWCjol9dUThRRf-ylkoE6Pvkv_45flQHlCaUCpOFRNADeJ2tZ29/exec#from=android'+(k?'&k='+encodeURIComponent(k):''));return;}
 var inApp=/KAKAOTALK|NAVER|Instagram|FBAN|FBAV|Line\/|DaumApps|everytimeApp/i.test(navigator.userAgent);
 if(!inApp&&history.replaceState){history.replaceState(null,'',location.pathname+'?app=1');}})();</script>
 <style>*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;background:#f5f7f8;color:#1d2329;line-height:1.55}
